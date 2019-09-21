@@ -1,0 +1,29 @@
+function createStore(changeCount) {
+    let store;
+
+    function dispatch(action) {
+        state = changeCount(state, action);
+        render()
+    }
+
+    function getState() {
+        return state;
+    }
+
+    dispatch(type: '@@INIT');
+
+    return {
+        dispatch,
+        getState
+    };
+};
+
+function changeCount(state = {count: 0}, action) {
+    switch (action.type) {
+        case 'ADD_PATIENT':
+            return {count: state.count +1} 
+        
+        default:
+            state;
+    }
+}
